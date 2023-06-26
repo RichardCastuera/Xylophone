@@ -13,6 +13,25 @@ class XylophoneApp extends StatelessWidget {
     );
   }
 
+  TextButton buildTextButton(int soundnumber, Color color) {
+    return TextButton(
+      onPressed: () {
+        playSound(soundnumber);
+      },
+      child: Expanded(
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+          height: 40.0,
+          // width: 100.0,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,132 +41,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(
-                onPressed: () {
-                  playSound(1);
-                },
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                    height: 40.0,
-                    // width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(2);
-                },
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                    height: 40.0,
-                    // width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(3);
-                },
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                    height: 40.0,
-                    // width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(4);
-                },
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                    height: 40.0,
-                    // width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(5);
-                },
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                    height: 40.0,
-                    // width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(6);
-                },
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                    height: 40.0,
-                    // width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.indigo,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(7);
-                },
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                    height: 40.0,
-                    // width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.purple,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-              ),
+              buildTextButton(1, Colors.red),
+              buildTextButton(2, Colors.orange),
+              buildTextButton(3, Colors.yellow),
+              buildTextButton(4, Colors.green),
+              buildTextButton(5, Colors.blue),
+              buildTextButton(6, Colors.indigo),
+              buildTextButton(7, Colors.purple),
             ],
           ),
         ),
